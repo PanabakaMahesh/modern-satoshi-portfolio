@@ -14,6 +14,8 @@ const Index = () => {
   return (
     <PageTransition>
       <div className="min-h-screen bg-background text-foreground overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern opacity-[0.02] pointer-events-none"></div>
+        
         <Navbar />
         <Hero />
         <About />

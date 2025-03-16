@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const About = () => {
   return (
@@ -52,14 +53,25 @@ const About = () => {
           
           <div className="md:col-span-5">
             <div className="relative">
-              <div className="aspect-square rounded-2xl overflow-hidden glass-card p-1">
-                <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary rounded-xl flex items-center justify-center">
-                  <div className="text-6xl font-display font-bold text-primary/80 select-none">PM</div>
+              <div className="rounded-2xl overflow-hidden p-3 bg-gradient-to-br from-primary/40 via-secondary/30 to-accent/20 shadow-xl">
+                <div className="relative aspect-square rounded-xl overflow-hidden border-4 border-background/50 shadow-inner">
+                  <Avatar className="w-full h-full rounded-none">
+                    <AvatarImage 
+                      src="/lovable-uploads/7b31d820-b2f1-410f-801a-c194e5b30a54.png" 
+                      alt="Panabaka Mahesh" 
+                      className="object-cover w-full h-full"
+                    />
+                    <AvatarFallback className="text-5xl font-display font-bold text-primary/80">PM</AvatarFallback>
+                  </Avatar>
                 </div>
+                
+                <div className="absolute -bottom-2 -right-2 w-24 h-24 rounded-full bg-primary/20 blur-2xl -z-10"></div>
+                <div className="absolute -top-2 -left-2 w-24 h-24 rounded-full bg-secondary/20 blur-2xl -z-10"></div>
               </div>
               
-              <div className="absolute -bottom-4 -right-4 w-40 h-40 bg-primary/10 rounded-full blur-3xl -z-10"></div>
-              <div className="absolute -top-4 -left-4 w-40 h-40 bg-primary/10 rounded-full blur-3xl -z-10"></div>
+              {/* Decorative elements */}
+              <div className="absolute top-0 right-0 transform translate-x-5 -translate-y-5 w-20 h-20 rounded-full bg-primary/10 blur-2xl"></div>
+              <div className="absolute bottom-0 left-0 transform -translate-x-5 translate-y-5 w-20 h-20 rounded-full bg-secondary/10 blur-2xl"></div>
             </div>
           </div>
         </div>

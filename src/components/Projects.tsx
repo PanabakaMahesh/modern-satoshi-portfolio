@@ -9,6 +9,7 @@ const Projects = () => {
       title: 'Livestock Detection using Drone with ML',
       description: 'A machine learning project that utilizes drone footage to detect and track livestock in agricultural settings.',
       github: 'https://github.com',
+      color: 'from-[#9b87f5]/20 to-[#6E59A5]/30',
       tags: ['Machine Learning', 'Computer Vision', 'Python']
     },
     {
@@ -16,6 +17,7 @@ const Projects = () => {
       title: 'Emotion-aware Chatbot',
       description: 'An AI-powered chatbot that recognizes user emotions from text input and responds appropriately.',
       github: 'https://github.com',
+      color: 'from-[#D946EF]/20 to-[#8B5CF6]/30',
       tags: ['Natural Language Processing', 'AI', 'Python']
     },
     {
@@ -23,6 +25,7 @@ const Projects = () => {
       title: '2048 Game using HTML and CSS',
       description: 'A web-based implementation of the popular 2048 puzzle game built with HTML, CSS, and JavaScript.',
       github: 'https://github.com',
+      color: 'from-[#F97316]/20 to-[#F59E0B]/30',
       tags: ['HTML', 'CSS', 'JavaScript']
     },
     {
@@ -30,6 +33,7 @@ const Projects = () => {
       title: 'Live Benchmark using Python',
       description: 'A Python application for real-time performance benchmarking of system components.',
       github: 'https://github.com',
+      color: 'from-[#0EA5E9]/20 to-[#3B82F6]/30',
       tags: ['Python', 'System Performance', 'Data Visualization']
     }
   ];
@@ -43,13 +47,17 @@ const Projects = () => {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="glass-card rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg group"
+              className="relative group rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg"
             >
-              <div className="aspect-video bg-gradient-to-br from-primary/10 to-background flex items-center justify-center p-8">
-                <div className="text-4xl font-display font-bold text-primary/50 text-center">{project.title.substring(0, 1)}</div>
+              {/* Gradient background instead of image */}
+              <div className={`h-24 bg-gradient-to-r ${project.color} flex items-center justify-center p-8 group-hover:scale-105 transition-transform duration-300`}>
+                <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+                <div className="z-10 w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20">
+                  <span className="text-2xl font-display font-bold text-white/80">{project.id}</span>
+                </div>
               </div>
               
-              <div className="p-6">
+              <div className="p-6 bg-background/80 backdrop-blur-sm border border-border rounded-b-xl">
                 <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors duration-300">{project.title}</h3>
                 
                 <p className="text-foreground/70 mb-4">{project.description}</p>
